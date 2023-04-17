@@ -84,7 +84,7 @@ const AddContacts = ()=>{
         />
       </Form.Item>
 
-      <Form.Item label="Email Id" name="email" rules={[{ required: true, message: 'Enter email Id!' }]}>
+      <Form.Item label="Email Id" name="email" rules={[{ required: true, type:"email", message: 'Enter email Id!' }]}>
         <Input
           placeholder="email"
           type="text"
