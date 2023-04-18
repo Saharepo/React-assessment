@@ -5,6 +5,7 @@ import axios from "axios";
 import "antd/dist/antd.css";
 import {
     Input,
+    InputNumber,
     Button,
     Form,
     Card,
@@ -93,13 +94,16 @@ const AddContacts = ()=>{
         />
       </Form.Item>
 
-      <Form.Item label="Phone Number" name="phoneNumber" rules={[{ required: true, message: 'Enter Phone number!' }]}>
+      <Form.Item label="Phone Number" name="phoneNumber" rules={[{ required: true, pattern: new RegExp(/^[0-9]+$/), message: 'Enter Phone number!' }]}>
         <Input
           placeholder="phoneNumber"
           type="text"
+          maxLength={10}
+          minLength={10}
           name="phoneNumber"
           id="phoneNumber"
         />
+        
       </Form.Item>
 
       <Form.Item label="City" name="city" rules={[{ required: true, message: 'Enter city!' }]}>
